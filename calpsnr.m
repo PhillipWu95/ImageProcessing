@@ -1,11 +1,11 @@
 function [ output_args ] = calpsnr( p1,p2 )
-%UNTITLED3 此处显示有关此函数的摘要
-%   此处显示详细说明
+%UNTITLED3 姝ゅ鏄剧ず鏈夊叧姝ゅ嚱鏁扮殑鎽樿
+%   姝ゅ鏄剧ず璇︾粏璇存槑
 [h,w]=size(p1);
-Bit=8;                %编码一个像素用多少二进制位
-MAX=2^Bit-1;          %图像有多少灰度级
-MES=sum(sum((double(p1)-(p2)).^2))/(h*w);     %均方差
-output_args=20*log10(MAX/sqrt(MES));           %峰值信噪比
+Bit=8;                %The order of bits to encode a pixel
+MAX=2^Bit-1;          %The grey scale level of an image
+MES=sum(sum((double(p1)-(p2)).^2))/(h*w);     %Mean square error
+output_args=20*log10(MAX/sqrt(MES));           %Peak value SNR
 
 end
 
